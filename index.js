@@ -1,6 +1,13 @@
 var Emitter = require('emitter');
 var each = require('each');
 
+/**
+ * Cycle Constructor
+ * @param {Array} nodes
+ * @param {Number} neighbours to select
+ * @param {Object} options
+ */
+
 function Cycle(nodes, neighbours, options){
   if (!(this instanceof Cycle)) return new Cycle(nodes, neighbours, options);
   options = options || {};
@@ -24,13 +31,15 @@ Cycle.prototype.show = function(i){
   // longer present. Note that this really isn't very
   // efficient, but should be fine for smaller data sets.
   var self = this;
-
   if (this.unload) {
     each(this.showing, function(key, node){
       var contained = false;
       key = parseInt(key);
       for (var i = indexes.start; i <= indexes.end; i++) {
-        if (i === key) contained = true;
+        if (i === key) {
+          contained = true;
+          break;
+        }
       }
       if (!contained) {
         self.emit('exit', key, self.nodes[key]);
@@ -40,7 +49,6 @@ Cycle.prototype.show = function(i){
   }
 
   // Determine those newly entered.
-
   for (var i = indexes.start; i <= indexes.end; i++) {
     if (!this.showing[i]) {
       this.emit('enter', i, this.nodes[i]);
