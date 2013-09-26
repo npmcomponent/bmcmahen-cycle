@@ -66,7 +66,7 @@ Cycle.prototype.getIndexes = function(i){
     ? this.nodes.length - 1
     : i + n;
 
-  this.range = { start : start, end : end }
+  this.range = { start : start, end : end };
   return this.range;
 }
 
