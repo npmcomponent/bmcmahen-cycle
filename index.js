@@ -1,5 +1,5 @@
-var Emitter = require('emitter');
-var each = require('each');
+var Emitter = require('component-emitter');
+var each = require('component-each');
 
 /**
  * Cycle Constructor

@@ -1,0 +1,12 @@
+{
+  "name": "bmcmahen-cycle",
+  "description": "cycle through an array to select only a particular index and a specified number of neighbours",
+  "version": "0.0.1",
+  "keywords": [],
+  "main": "index.js",
+  "dependencies": {
+    "component-emitter": "git://github.com/npmcomponent/component-emitter.git",
+    "component-each": "git://github.com/npmcomponent/component-each.git"
+  },
+  "license": "MIT"
+}
